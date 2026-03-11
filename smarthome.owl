@@ -12,122 +12,186 @@
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
-
-    <Declaration><Class IRI="#Location"/></Declaration>
-    <Declaration><Class IRI="#Room"/></Declaration>
-    <Declaration><Class IRI="#Zone"/></Declaration>
-    <Declaration><Class IRI="#OutdoorSpace"/></Declaration>
-    <Declaration><Class IRI="#Device"/></Declaration>
-    <Declaration><Class IRI="#Sensor"/></Declaration>
-    <Declaration><Class IRI="#Actuator"/></Declaration>
-    <Declaration><Class IRI="#TemperatureSensor"/></Declaration>
-    <Declaration><Class IRI="#MotionSensor"/></Declaration>
-    <Declaration><Class IRI="#Camera"/></Declaration>
-    <Declaration><Class IRI="#Light"/></Declaration>
-    <Declaration><Class IRI="#Thermostat"/></Declaration>
-    <Declaration><Class IRI="#SmartLock"/></Declaration>
-    <Declaration><Class IRI="#Controller"/></Declaration>
-    <Declaration><Class IRI="#MobileApp"/></Declaration>
-    <Declaration><Class IRI="#HomeHub"/></Declaration>
-    <Declaration><Class IRI="#Scene"/></Declaration>
-    <Declaration><Class IRI="#Network"/></Declaration>
-    <Declaration><Class IRI="#ActiveDevice"/></Declaration>
-    <Declaration><Class IRI="#MonitoredLocation"/></Declaration>
-    <Declaration><Class IRI="#EquippedRoom"/></Declaration>
-    <Declaration><Class IRI="#ClimateControlledRoom"/></Declaration>
-    <Declaration><Class IRI="#SensorOnlyRoom"/></Declaration>
-    <Declaration><Class IRI="#WellEquippedRoom"/></Declaration>
-    <Declaration><Class IRI="#HubControlledDevice"/></Declaration>
-
-    <Declaration><ObjectProperty IRI="#locatedIn"/></Declaration>
-    <Declaration><ObjectProperty IRI="#contains"/></Declaration>
-    <Declaration><ObjectProperty IRI="#hasRoom"/></Declaration>
-    <Declaration><ObjectProperty IRI="#isPartOfZone"/></Declaration>
-    <Declaration><ObjectProperty IRI="#monitors"/></Declaration>
-    <Declaration><ObjectProperty IRI="#isMonitoredBy"/></Declaration>
-    <Declaration><ObjectProperty IRI="#controls"/></Declaration>
-    <Declaration><ObjectProperty IRI="#isControlledBy"/></Declaration>
-    <Declaration><ObjectProperty IRI="#activates"/></Declaration>
-    <Declaration><ObjectProperty IRI="#connectedTo"/></Declaration>
-    <Declaration><ObjectProperty IRI="#isLocatedInZone"/></Declaration>
-
-    <Declaration><DataProperty IRI="#deviceName"/></Declaration>
-    <Declaration><DataProperty IRI="#temperatureValue"/></Declaration>
-    <Declaration><DataProperty IRI="#brightnessLevel"/></Declaration>
-    <Declaration><DataProperty IRI="#isActive"/></Declaration>
-
-    <Declaration><NamedIndividual IRI="#LivingRoom"/></Declaration>
-    <Declaration><NamedIndividual IRI="#Kitchen"/></Declaration>
-    <Declaration><NamedIndividual IRI="#Bedroom"/></Declaration>
-    <Declaration><NamedIndividual IRI="#SecurityRoom"/></Declaration>
-    <Declaration><NamedIndividual IRI="#Garden"/></Declaration>
-    <Declaration><NamedIndividual IRI="#LivingArea"/></Declaration>
-    <Declaration><NamedIndividual IRI="#NightZone"/></Declaration>
-    <Declaration><NamedIndividual IRI="#GardenCam"/></Declaration>
-    <Declaration><NamedIndividual IRI="#EntranceCam"/></Declaration>
-    <Declaration><NamedIndividual IRI="#BedroomMotion"/></Declaration>
-    <Declaration><NamedIndividual IRI="#SecurityMotion"/></Declaration>
-    <Declaration><NamedIndividual IRI="#KitchenTempSensor"/></Declaration>
-    <Declaration><NamedIndividual IRI="#Nest_Thermo"/></Declaration>
-    <Declaration><NamedIndividual IRI="#HueBulb_01"/></Declaration>
-    <Declaration><NamedIndividual IRI="#BedroomLight"/></Declaration>
-    <Declaration><NamedIndividual IRI="#FrontDoorLock"/></Declaration>
-    <Declaration><NamedIndividual IRI="#MainHub"/></Declaration>
-    <Declaration><NamedIndividual IRI="#OwnerPhone"/></Declaration>
-    <Declaration><NamedIndividual IRI="#NightMode"/></Declaration>
-    <Declaration><NamedIndividual IRI="#HomeWifi"/></Declaration>
-
-    <SubClassOf><Class IRI="#Room"/><Class IRI="#Location"/></SubClassOf>
-    <SubClassOf><Class IRI="#Zone"/><Class IRI="#Location"/></SubClassOf>
-    <SubClassOf><Class IRI="#OutdoorSpace"/><Class IRI="#Location"/></SubClassOf>
-    <SubClassOf><Class IRI="#Sensor"/><Class IRI="#Device"/></SubClassOf>
-    <SubClassOf><Class IRI="#Actuator"/><Class IRI="#Device"/></SubClassOf>
-    <SubClassOf><Class IRI="#TemperatureSensor"/><Class IRI="#Sensor"/></SubClassOf>
-    <SubClassOf><Class IRI="#MotionSensor"/><Class IRI="#Sensor"/></SubClassOf>
-    <SubClassOf><Class IRI="#Camera"/><Class IRI="#Sensor"/></SubClassOf>
-    <SubClassOf><Class IRI="#Light"/><Class IRI="#Actuator"/></SubClassOf>
-    <SubClassOf><Class IRI="#Thermostat"/><Class IRI="#Actuator"/></SubClassOf>
-    <SubClassOf><Class IRI="#SmartLock"/><Class IRI="#Actuator"/></SubClassOf>
-    <SubClassOf><Class IRI="#MobileApp"/><Class IRI="#Controller"/></SubClassOf>
-    <SubClassOf><Class IRI="#HomeHub"/><Class IRI="#Controller"/></SubClassOf>
-
-    <DisjointClasses>
-        <Class IRI="#Location"/>
-        <Class IRI="#Device"/>
-        <Class IRI="#Controller"/>
-        <Class IRI="#Scene"/>
-        <Class IRI="#Network"/>
-    </DisjointClasses>
-
-    <DisjointUnion>
-        <Class IRI="#Location"/>
-        <Class IRI="#Room"/>
-        <Class IRI="#Zone"/>
-        <Class IRI="#OutdoorSpace"/>
-    </DisjointUnion>
-
-    <DisjointClasses>
-        <Class IRI="#Sensor"/>
+    <Declaration>
+        <Class IRI="#ActiveDevice"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Actuator"/>
-    </DisjointClasses>
-
-    <DisjointClasses>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Camera"/>
-        <Class IRI="#MotionSensor"/>
-        <Class IRI="#TemperatureSensor"/>
-    </DisjointClasses>
-
-    <DisjointClasses>
-        <Class IRI="#Light"/>
-        <Class IRI="#Thermostat"/>
-        <Class IRI="#SmartLock"/>
-    </DisjointClasses>
-
-    <DisjointClasses>
-        <Class IRI="#MobileApp"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ClimateControlledRoom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Controller"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Device"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EquippedRoom"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#HomeHub"/>
-    </DisjointClasses>
-
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HubControlledDevice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Light"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Location"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MobileApp"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MonitoredLocation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MotionSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Network"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OutdoorSpace"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Room"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Scene"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SensorOnlyRoom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SmartLock"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TemperatureSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Thermostat"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WellEquippedRoom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Zone"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#activates"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#connectedTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#contains"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#controls"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasRoom"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isControlledBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isLocatedInZone"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isMonitoredBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPartOfZone"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#locatedIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#monitors"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#brightnessLevel"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#deviceName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isActive"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#temperatureValue"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Bedroom"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BedroomLight"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BedroomMotion"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EntranceCam"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FrontDoorLock"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Garden"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GardenCam"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HomeWifi"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HueBulb_01"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Kitchen"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#KitchenTempSensor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LivingArea"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LivingRoom"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MainHub"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Nest_Thermo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NightMode"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NightZone"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#OwnerPhone"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SecurityMotion"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SecurityRoom"/>
+    </Declaration>
     <EquivalentClasses>
         <Class IRI="#ActiveDevice"/>
         <ObjectIntersectionOf>
@@ -138,29 +202,6 @@
             </DataHasValue>
         </ObjectIntersectionOf>
     </EquivalentClasses>
-
-    <EquivalentClasses>
-        <Class IRI="#MonitoredLocation"/>
-        <ObjectIntersectionOf>
-            <Class IRI="#Location"/>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#isMonitoredBy"/>
-                <Class IRI="#Camera"/>
-            </ObjectSomeValuesFrom>
-        </ObjectIntersectionOf>
-    </EquivalentClasses>
-
-    <EquivalentClasses>
-        <Class IRI="#EquippedRoom"/>
-        <ObjectIntersectionOf>
-            <Class IRI="#Room"/>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#contains"/>
-                <Class IRI="#Device"/>
-            </ObjectSomeValuesFrom>
-        </ObjectIntersectionOf>
-    </EquivalentClasses>
-
     <EquivalentClasses>
         <Class IRI="#ClimateControlledRoom"/>
         <ObjectIntersectionOf>
@@ -171,29 +212,16 @@
             </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
-
     <EquivalentClasses>
-        <Class IRI="#SensorOnlyRoom"/>
+        <Class IRI="#EquippedRoom"/>
         <ObjectIntersectionOf>
             <Class IRI="#Room"/>
-            <ObjectAllValuesFrom>
-                <ObjectProperty IRI="#contains"/>
-                <Class IRI="#Sensor"/>
-            </ObjectAllValuesFrom>
-        </ObjectIntersectionOf>
-    </EquivalentClasses>
-
-    <EquivalentClasses>
-        <Class IRI="#WellEquippedRoom"/>
-        <ObjectIntersectionOf>
-            <Class IRI="#Room"/>
-            <ObjectMinCardinality cardinality="2">
+            <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="#contains"/>
                 <Class IRI="#Device"/>
-            </ObjectMinCardinality>
+            </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
-
     <EquivalentClasses>
         <Class IRI="#HubControlledDevice"/>
         <ObjectIntersectionOf>
@@ -204,71 +232,502 @@
             </ObjectAllValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
-
-    <SubObjectPropertyOf>
-        <ObjectPropertyChain>
-            <ObjectProperty IRI="#locatedIn"/>
-            <ObjectProperty IRI="#isPartOfZone"/>
-        </ObjectPropertyChain>
-        <ObjectProperty IRI="#isLocatedInZone"/>
-    </SubObjectPropertyOf>
-
-    <InverseObjectProperties>
+    <EquivalentClasses>
+        <Class IRI="#MonitoredLocation"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Location"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isMonitoredBy"/>
+                <Class IRI="#Camera"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#SensorOnlyRoom"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Room"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#contains"/>
+                <Class IRI="#Sensor"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#WellEquippedRoom"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Room"/>
+            <ObjectMinCardinality cardinality="2">
+                <ObjectProperty IRI="#contains"/>
+                <Class IRI="#Device"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Actuator"/>
+        <Class IRI="#Device"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Camera"/>
+        <Class IRI="#Sensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HomeHub"/>
+        <Class IRI="#Controller"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Light"/>
+        <Class IRI="#Actuator"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MobileApp"/>
+        <Class IRI="#Controller"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MotionSensor"/>
+        <Class IRI="#Sensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OutdoorSpace"/>
+        <Class IRI="#Location"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Room"/>
+        <Class IRI="#Location"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sensor"/>
+        <Class IRI="#Device"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SmartLock"/>
+        <Class IRI="#Actuator"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TemperatureSensor"/>
+        <Class IRI="#Sensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Thermostat"/>
+        <Class IRI="#Actuator"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Zone"/>
+        <Class IRI="#Location"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Actuator"/>
+        <Class IRI="#Sensor"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Camera"/>
+        <Class IRI="#MotionSensor"/>
+        <Class IRI="#TemperatureSensor"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Controller"/>
+        <Class IRI="#Device"/>
+        <Class IRI="#Location"/>
+        <Class IRI="#Network"/>
+        <Class IRI="#Scene"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#HomeHub"/>
+        <Class IRI="#MobileApp"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Light"/>
+        <Class IRI="#SmartLock"/>
+        <Class IRI="#Thermostat"/>
+    </DisjointClasses>
+    <DisjointUnion>
+        <Class IRI="#Location"/>
+        <Class IRI="#OutdoorSpace"/>
+        <Class IRI="#Room"/>
+        <Class IRI="#Zone"/>
+    </DisjointUnion>
+    <ClassAssertion>
+        <Class IRI="#Room"/>
+        <NamedIndividual IRI="#Bedroom"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Light"/>
+        <NamedIndividual IRI="#BedroomLight"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MotionSensor"/>
+        <NamedIndividual IRI="#BedroomMotion"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Camera"/>
+        <NamedIndividual IRI="#EntranceCam"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SmartLock"/>
+        <NamedIndividual IRI="#FrontDoorLock"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#OutdoorSpace"/>
+        <NamedIndividual IRI="#Garden"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Camera"/>
+        <NamedIndividual IRI="#GardenCam"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Network"/>
+        <NamedIndividual IRI="#HomeWifi"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Light"/>
+        <NamedIndividual IRI="#HueBulb_01"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Room"/>
+        <NamedIndividual IRI="#Kitchen"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#TemperatureSensor"/>
+        <NamedIndividual IRI="#KitchenTempSensor"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Zone"/>
+        <NamedIndividual IRI="#LivingArea"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Room"/>
+        <NamedIndividual IRI="#LivingRoom"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#HomeHub"/>
+        <NamedIndividual IRI="#MainHub"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Thermostat"/>
+        <NamedIndividual IRI="#Nest_Thermo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Scene"/>
+        <NamedIndividual IRI="#NightMode"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Zone"/>
+        <NamedIndividual IRI="#NightZone"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MobileApp"/>
+        <NamedIndividual IRI="#OwnerPhone"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MotionSensor"/>
+        <NamedIndividual IRI="#SecurityMotion"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Room"/>
+        <NamedIndividual IRI="#SecurityRoom"/>
+    </ClassAssertion>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#Bedroom"/>
+        <NamedIndividual IRI="#Garden"/>
+        <NamedIndividual IRI="#Kitchen"/>
+        <NamedIndividual IRI="#LivingRoom"/>
+        <NamedIndividual IRI="#SecurityRoom"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#BedroomLight"/>
+        <NamedIndividual IRI="#BedroomMotion"/>
+        <NamedIndividual IRI="#EntranceCam"/>
+        <NamedIndividual IRI="#FrontDoorLock"/>
+        <NamedIndividual IRI="#GardenCam"/>
+        <NamedIndividual IRI="#HueBulb_01"/>
+        <NamedIndividual IRI="#KitchenTempSensor"/>
+        <NamedIndividual IRI="#Nest_Thermo"/>
+        <NamedIndividual IRI="#SecurityMotion"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#LivingArea"/>
+        <NamedIndividual IRI="#NightZone"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#MainHub"/>
+        <NamedIndividual IRI="#OwnerPhone"/>
+    </DifferentIndividuals>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#connectedTo"/>
+        <NamedIndividual IRI="#BedroomLight"/>
+        <NamedIndividual IRI="#HomeWifi"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#locatedIn"/>
+        <NamedIndividual IRI="#BedroomLight"/>
+        <NamedIndividual IRI="#Bedroom"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#connectedTo"/>
+        <NamedIndividual IRI="#BedroomMotion"/>
+        <NamedIndividual IRI="#HomeWifi"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locatedIn"/>
+        <NamedIndividual IRI="#BedroomMotion"/>
+        <NamedIndividual IRI="#Bedroom"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#connectedTo"/>
+        <NamedIndividual IRI="#EntranceCam"/>
+        <NamedIndividual IRI="#HomeWifi"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locatedIn"/>
+        <NamedIndividual IRI="#EntranceCam"/>
+        <NamedIndividual IRI="#LivingRoom"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#monitors"/>
+        <NamedIndividual IRI="#EntranceCam"/>
+        <NamedIndividual IRI="#LivingRoom"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#connectedTo"/>
+        <NamedIndividual IRI="#FrontDoorLock"/>
+        <NamedIndividual IRI="#HomeWifi"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locatedIn"/>
+        <NamedIndividual IRI="#FrontDoorLock"/>
+        <NamedIndividual IRI="#LivingRoom"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#connectedTo"/>
+        <NamedIndividual IRI="#GardenCam"/>
+        <NamedIndividual IRI="#HomeWifi"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#monitors"/>
+        <NamedIndividual IRI="#GardenCam"/>
+        <NamedIndividual IRI="#Garden"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#connectedTo"/>
+        <NamedIndividual IRI="#HueBulb_01"/>
+        <NamedIndividual IRI="#HomeWifi"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locatedIn"/>
+        <NamedIndividual IRI="#HueBulb_01"/>
+        <NamedIndividual IRI="#LivingRoom"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#connectedTo"/>
+        <NamedIndividual IRI="#KitchenTempSensor"/>
+        <NamedIndividual IRI="#HomeWifi"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locatedIn"/>
+        <NamedIndividual IRI="#KitchenTempSensor"/>
+        <NamedIndividual IRI="#Kitchen"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasRoom"/>
+        <NamedIndividual IRI="#LivingArea"/>
+        <NamedIndividual IRI="#Kitchen"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasRoom"/>
+        <NamedIndividual IRI="#LivingArea"/>
+        <NamedIndividual IRI="#LivingRoom"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#activates"/>
+        <NamedIndividual IRI="#MainHub"/>
+        <NamedIndividual IRI="#NightMode"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#controls"/>
+        <NamedIndividual IRI="#MainHub"/>
+        <NamedIndividual IRI="#BedroomLight"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#controls"/>
+        <NamedIndividual IRI="#MainHub"/>
+        <NamedIndividual IRI="#FrontDoorLock"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#controls"/>
+        <NamedIndividual IRI="#MainHub"/>
+        <NamedIndividual IRI="#HueBulb_01"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#controls"/>
+        <NamedIndividual IRI="#MainHub"/>
+        <NamedIndividual IRI="#Nest_Thermo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#connectedTo"/>
+        <NamedIndividual IRI="#Nest_Thermo"/>
+        <NamedIndividual IRI="#HomeWifi"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locatedIn"/>
+        <NamedIndividual IRI="#Nest_Thermo"/>
+        <NamedIndividual IRI="#Kitchen"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasRoom"/>
+        <NamedIndividual IRI="#NightZone"/>
+        <NamedIndividual IRI="#Bedroom"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#activates"/>
+        <NamedIndividual IRI="#OwnerPhone"/>
+        <NamedIndividual IRI="#NightMode"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#controls"/>
+        <NamedIndividual IRI="#OwnerPhone"/>
+        <NamedIndividual IRI="#FrontDoorLock"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#controls"/>
+        <NamedIndividual IRI="#OwnerPhone"/>
+        <NamedIndividual IRI="#GardenCam"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#connectedTo"/>
+        <NamedIndividual IRI="#SecurityMotion"/>
+        <NamedIndividual IRI="#HomeWifi"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locatedIn"/>
+        <NamedIndividual IRI="#SecurityMotion"/>
+        <NamedIndividual IRI="#SecurityRoom"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brightnessLevel"/>
+        <NamedIndividual IRI="#BedroomLight"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#deviceName"/>
+        <NamedIndividual IRI="#BedroomLight"/>
+        <Literal>Bedroom_Light</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isActive"/>
+        <NamedIndividual IRI="#BedroomLight"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#deviceName"/>
+        <NamedIndividual IRI="#BedroomMotion"/>
+        <Literal>Bedroom_Motion</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isActive"/>
+        <NamedIndividual IRI="#BedroomMotion"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#deviceName"/>
+        <NamedIndividual IRI="#EntranceCam"/>
+        <Literal>EntranceCam</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isActive"/>
+        <NamedIndividual IRI="#EntranceCam"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#deviceName"/>
+        <NamedIndividual IRI="#FrontDoorLock"/>
+        <Literal>FrontDoor_Lock</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isActive"/>
+        <NamedIndividual IRI="#FrontDoorLock"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#deviceName"/>
+        <NamedIndividual IRI="#GardenCam"/>
+        <Literal>GardenCam</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isActive"/>
+        <NamedIndividual IRI="#GardenCam"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brightnessLevel"/>
+        <NamedIndividual IRI="#HueBulb_01"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">80</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#deviceName"/>
+        <NamedIndividual IRI="#HueBulb_01"/>
+        <Literal>LivingRoom_Bulb</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isActive"/>
+        <NamedIndividual IRI="#HueBulb_01"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#deviceName"/>
+        <NamedIndividual IRI="#KitchenTempSensor"/>
+        <Literal>Kitchen_TempSensor</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isActive"/>
+        <NamedIndividual IRI="#KitchenTempSensor"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#temperatureValue"/>
+        <NamedIndividual IRI="#KitchenTempSensor"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">21.5</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#deviceName"/>
+        <NamedIndividual IRI="#Nest_Thermo"/>
+        <Literal>Kitchen_Thermo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isActive"/>
+        <NamedIndividual IRI="#Nest_Thermo"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#deviceName"/>
+        <NamedIndividual IRI="#SecurityMotion"/>
+        <Literal>Security_Motion</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isActive"/>
+        <NamedIndividual IRI="#SecurityMotion"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#contains"/>
+        <ObjectProperty IRI="#locatedIn"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#controls"/>
+        <ObjectProperty IRI="#isControlledBy"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasRoom"/>
         <ObjectProperty IRI="#isPartOfZone"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#monitors"/>
         <ObjectProperty IRI="#isMonitoredBy"/>
+        <ObjectProperty IRI="#monitors"/>
     </InverseObjectProperties>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#controls"/>
-        <ObjectProperty IRI="#isControlledBy"/>
-    </InverseObjectProperties>
-
-    <FunctionalObjectProperty>
-        <ObjectProperty IRI="#locatedIn"/>
-    </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#connectedTo"/>
     </FunctionalObjectProperty>
-
-    <ObjectPropertyDomain>
+    <FunctionalObjectProperty>
         <ObjectProperty IRI="#locatedIn"/>
-        <Class IRI="#Device"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#contains"/>
-        <Class IRI="#Room"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasRoom"/>
-        <Class IRI="#Zone"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isPartOfZone"/>
-        <Class IRI="#Room"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#monitors"/>
-        <Class IRI="#Camera"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isMonitoredBy"/>
-        <Class IRI="#Location"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#controls"/>
-        <Class IRI="#Controller"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isControlledBy"/>
-        <Class IRI="#Device"/>
-    </ObjectPropertyDomain>
+    </FunctionalObjectProperty>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#activates"/>
         <Class IRI="#Controller"/>
@@ -278,42 +737,41 @@
         <Class IRI="#Device"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#contains"/>
+        <Class IRI="#Room"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#controls"/>
+        <Class IRI="#Controller"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasRoom"/>
+        <Class IRI="#Zone"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isControlledBy"/>
+        <Class IRI="#Device"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#isLocatedInZone"/>
         <Class IRI="#Device"/>
     </ObjectPropertyDomain>
-
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#locatedIn"/>
-        <Class IRI="#Room"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#contains"/>
-        <Class IRI="#Device"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasRoom"/>
-        <Class IRI="#Room"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isPartOfZone"/>
-        <Class IRI="#Zone"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#monitors"/>
-        <Class IRI="#Location"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#isMonitoredBy"/>
-        <Class IRI="#Camera"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#controls"/>
+        <Class IRI="#Location"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPartOfZone"/>
+        <Class IRI="#Room"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#locatedIn"/>
         <Class IRI="#Device"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isControlledBy"/>
-        <Class IRI="#Controller"/>
-    </ObjectPropertyRange>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#monitors"/>
+        <Class IRI="#Camera"/>
+    </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#activates"/>
         <Class IRI="#Scene"/>
@@ -323,227 +781,87 @@
         <Class IRI="#Network"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#contains"/>
+        <Class IRI="#Device"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#controls"/>
+        <Class IRI="#Device"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasRoom"/>
+        <Class IRI="#Room"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isControlledBy"/>
+        <Class IRI="#Controller"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#isLocatedInZone"/>
         <Class IRI="#Zone"/>
     </ObjectPropertyRange>
-
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isMonitoredBy"/>
+        <Class IRI="#Camera"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPartOfZone"/>
+        <Class IRI="#Zone"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#locatedIn"/>
+        <Class IRI="#Room"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#monitors"/>
+        <Class IRI="#Location"/>
+    </ObjectPropertyRange>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="#locatedIn"/>
+            <ObjectProperty IRI="#isPartOfZone"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#isLocatedInZone"/>
+    </SubObjectPropertyOf>
     <FunctionalDataProperty>
         <DataProperty IRI="#deviceName"/>
     </FunctionalDataProperty>
-
+    <DataPropertyDomain>
+        <DataProperty IRI="#brightnessLevel"/>
+        <Class IRI="#Light"/>
+    </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#deviceName"/>
+        <Class IRI="#Device"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#isActive"/>
         <Class IRI="#Device"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#temperatureValue"/>
         <Class IRI="#TemperatureSensor"/>
     </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#brightnessLevel"/>
-        <Class IRI="#Light"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#isActive"/>
-        <Class IRI="#Device"/>
-    </DataPropertyDomain>
-
-    <DataPropertyRange>
-        <DataProperty IRI="#deviceName"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#temperatureValue"/>
-        <Datatype abbreviatedIRI="xsd:float"/>
-    </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#brightnessLevel"/>
         <Datatype abbreviatedIRI="xsd:integer"/>
     </DataPropertyRange>
     <DataPropertyRange>
+        <DataProperty IRI="#deviceName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
         <DataProperty IRI="#isActive"/>
         <Datatype abbreviatedIRI="xsd:boolean"/>
     </DataPropertyRange>
-
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Location</IRI>
-        <Literal>Location</Literal>
-    </AnnotationAssertion>
+    <DataPropertyRange>
+        <DataProperty IRI="#temperatureValue"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Location</IRI>
-        <Literal>A spatial entity in the smart home. Every Location is exactly one of: Room, Zone, or OutdoorSpace (DisjointUnion).</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Room</IRI>
-        <Literal>Room</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Room</IRI>
-        <Literal>A physical indoor space enclosed by walls (e.g. Kitchen, Bedroom, LivingRoom). Disjoint from Zone and OutdoorSpace.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Zone</IRI>
-        <Literal>Zone</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Zone</IRI>
-        <Literal>A logical grouping of one or more Rooms, used to apply automation at higher granularity than a single room.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#OutdoorSpace</IRI>
-        <Literal>Outdoor Space</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#OutdoorSpace</IRI>
-        <Literal>A physical outdoor area (e.g. Garden). Disjoint from Room and Zone. Cameras can monitor OutdoorSpaces.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Device</IRI>
-        <Literal>Device</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Device</IRI>
-        <Literal>A smart physical device installed in the home. Every Device is either a Sensor or an Actuator. Disjoint from Location, Controller, Scene, Network.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Sensor</IRI>
-        <Literal>Sensor</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Sensor</IRI>
-        <Literal>A Device that measures or detects physical phenomena (temperature, motion, image). Disjoint from Actuator.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Actuator</IRI>
-        <Literal>Actuator</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Actuator</IRI>
-        <Literal>A Device that performs physical actions in response to commands. Disjoint from Sensor.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#TemperatureSensor</IRI>
-        <Literal>Temperature Sensor</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#TemperatureSensor</IRI>
-        <Literal>A Sensor that measures ambient temperature in Celsius (xsd:float).</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#MotionSensor</IRI>
-        <Literal>Motion Sensor</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#MotionSensor</IRI>
-        <Literal>A Sensor that detects movement in a Room.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Camera</IRI>
-        <Literal>Camera</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Camera</IRI>
-        <Literal>A Sensor that captures video of a Location via the monitors property.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Light</IRI>
-        <Literal>Light</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Light</IRI>
-        <Literal>An Actuator controlling room illumination. Brightness expressed as integer 0-100.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Thermostat</IRI>
-        <Literal>Thermostat</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Thermostat</IRI>
-        <Literal>An Actuator that regulates room temperature. A Room containing a Thermostat is inferred ClimateControlledRoom.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#SmartLock</IRI>
-        <Literal>Smart Lock</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#SmartLock</IRI>
-        <Literal>An Actuator controlling physical access. Assigned to the nearest room for simplicity.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Controller</IRI>
-        <Literal>Controller</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Controller</IRI>
-        <Literal>An entity that issues commands to Devices and activates Scenes.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#MobileApp</IRI>
-        <Literal>Mobile App</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#MobileApp</IRI>
-        <Literal>A Controller on a smartphone allowing remote control of Devices.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#HomeHub</IRI>
-        <Literal>Home Hub</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#HomeHub</IRI>
-        <Literal>A local Controller that orchestrates device automation on the home network.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Scene</IRI>
-        <Literal>Scene</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Scene</IRI>
-        <Literal>A named automation configuration (e.g. NightMode).</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Network</IRI>
-        <Literal>Network</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Network</IRI>
-        <Literal>A connectivity infrastructure (e.g. WiFi) to which Devices connect. Each Device connects to exactly one Network (Functional).</Literal>
+        <IRI>#ActiveDevice</IRI>
+        <Literal>DEFINED CLASS: Device and (isActive value true). Reasoner auto-classifies any Device with isActive=true.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -552,33 +870,23 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#ActiveDevice</IRI>
-        <Literal>DEFINED CLASS: Device and (isActive value true). Reasoner auto-classifies any Device with isActive=true.</Literal>
+        <IRI>#Actuator</IRI>
+        <Literal>A Device that performs physical actions in response to commands. Disjoint from Sensor.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#MonitoredLocation</IRI>
-        <Literal>Monitored Location</Literal>
+        <IRI>#Actuator</IRI>
+        <Literal>Actuator</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#MonitoredLocation</IRI>
-        <Literal>DEFINED CLASS: Location and (isMonitoredBy some Camera). Uses existential restriction and inverse property.</Literal>
+        <IRI>#Camera</IRI>
+        <Literal>A Sensor that captures video of a Location via the monitors property.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#EquippedRoom</IRI>
-        <Literal>Equipped Room</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#EquippedRoom</IRI>
-        <Literal>DEFINED CLASS: Room and (contains some Device). Uses existential restriction via inverse of locatedIn.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#ClimateControlledRoom</IRI>
-        <Literal>Climate Controlled Room</Literal>
+        <IRI>#Camera</IRI>
+        <Literal>Camera</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -587,28 +895,48 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#SensorOnlyRoom</IRI>
-        <Literal>Sensor Only Room</Literal>
+        <IRI>#ClimateControlledRoom</IRI>
+        <Literal>Climate Controlled Room</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#SensorOnlyRoom</IRI>
-        <Literal>DEFINED CLASS: Room and (contains only Sensor). Uses universal restriction. SecurityRoom is the ABox instance that qualifies.</Literal>
+        <IRI>#Controller</IRI>
+        <Literal>An entity that issues commands to Devices and activates Scenes.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#WellEquippedRoom</IRI>
-        <Literal>Well Equipped Room</Literal>
+        <IRI>#Controller</IRI>
+        <Literal>Controller</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#WellEquippedRoom</IRI>
-        <Literal>DEFINED CLASS: Room and (contains min 2 Device). Uses qualified cardinality restriction from ALCN. LivingRoom, Kitchen, Bedroom qualify. SecurityRoom does not.</Literal>
+        <IRI>#Device</IRI>
+        <Literal>A smart physical device installed in the home. Every Device is either a Sensor or an Actuator. Disjoint from Location, Controller, Scene, Network.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#HubControlledDevice</IRI>
-        <Literal>Hub Controlled Device</Literal>
+        <IRI>#Device</IRI>
+        <Literal>Device</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#EquippedRoom</IRI>
+        <Literal>DEFINED CLASS: Room and (contains some Device). Uses existential restriction via inverse of locatedIn.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#EquippedRoom</IRI>
+        <Literal>Equipped Room</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#HomeHub</IRI>
+        <Literal>A local Controller that orchestrates device automation on the home network.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#HomeHub</IRI>
+        <Literal>Home Hub</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -617,378 +945,177 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#isLocatedInZone</IRI>
-        <Literal>is Located In Zone</Literal>
+        <IRI>#HubControlledDevice</IRI>
+        <Literal>Hub Controlled Device</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Light</IRI>
+        <Literal>An Actuator controlling room illumination. Brightness expressed as integer 0-100.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Light</IRI>
+        <Literal>Light</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Location</IRI>
+        <Literal>A spatial entity in the smart home. Every Location is exactly one of: Room, Zone, or OutdoorSpace (DisjointUnion).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Location</IRI>
+        <Literal>Location</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MobileApp</IRI>
+        <Literal>A Controller on a smartphone allowing remote control of Devices.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MobileApp</IRI>
+        <Literal>Mobile App</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MonitoredLocation</IRI>
+        <Literal>DEFINED CLASS: Location and (isMonitoredBy some Camera). Uses existential restriction and inverse property.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MonitoredLocation</IRI>
+        <Literal>Monitored Location</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MotionSensor</IRI>
+        <Literal>A Sensor that detects movement in a Room.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MotionSensor</IRI>
+        <Literal>Motion Sensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Network</IRI>
+        <Literal>A connectivity infrastructure (e.g. WiFi) to which Devices connect. Each Device connects to exactly one Network (Functional).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Network</IRI>
+        <Literal>Network</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OutdoorSpace</IRI>
+        <Literal>A physical outdoor area (e.g. Garden). Disjoint from Room and Zone. Cameras can monitor OutdoorSpaces.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#OutdoorSpace</IRI>
+        <Literal>Outdoor Space</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Room</IRI>
+        <Literal>A physical indoor space enclosed by walls (e.g. Kitchen, Bedroom, LivingRoom). Disjoint from Zone and OutdoorSpace.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Room</IRI>
+        <Literal>Room</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Scene</IRI>
+        <Literal>A named automation configuration (e.g. NightMode).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Scene</IRI>
+        <Literal>Scene</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Sensor</IRI>
+        <Literal>A Device that measures or detects physical phenomena (temperature, motion, image). Disjoint from Actuator.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Sensor</IRI>
+        <Literal>Sensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SensorOnlyRoom</IRI>
+        <Literal>DEFINED CLASS: Room and (contains only Sensor). Uses universal restriction. SecurityRoom is the ABox instance that qualifies.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SensorOnlyRoom</IRI>
+        <Literal>Sensor Only Room</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SmartLock</IRI>
+        <Literal>An Actuator controlling physical access. Assigned to the nearest room for simplicity.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SmartLock</IRI>
+        <Literal>Smart Lock</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TemperatureSensor</IRI>
+        <Literal>A Sensor that measures ambient temperature in Celsius (xsd:float).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TemperatureSensor</IRI>
+        <Literal>Temperature Sensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Thermostat</IRI>
+        <Literal>An Actuator that regulates room temperature. A Room containing a Thermostat is inferred ClimateControlledRoom.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Thermostat</IRI>
+        <Literal>Thermostat</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#WellEquippedRoom</IRI>
+        <Literal>DEFINED CLASS: Room and (contains min 2 Device). Uses qualified cardinality restriction from ALCN. LivingRoom, Kitchen, Bedroom qualify. SecurityRoom does not.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#WellEquippedRoom</IRI>
+        <Literal>Well Equipped Room</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Zone</IRI>
+        <Literal>A logical grouping of one or more Rooms, used to apply automation at higher granularity than a single room.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Zone</IRI>
+        <Literal>Zone</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#isLocatedInZone</IRI>
         <Literal>Inferred via property chain: locatedIn o isPartOfZone. If a Device is in a Room and that Room isPartOfZone a Zone, the reasoner infers the Device isLocatedInZone that Zone.</Literal>
     </AnnotationAssertion>
-
-    <ClassAssertion>
-        <Class IRI="#Room"/>
-        <NamedIndividual IRI="#LivingRoom"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Room"/>
-        <NamedIndividual IRI="#Kitchen"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Room"/>
-        <NamedIndividual IRI="#Bedroom"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Room"/>
-        <NamedIndividual IRI="#SecurityRoom"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#OutdoorSpace"/>
-        <NamedIndividual IRI="#Garden"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Zone"/>
-        <NamedIndividual IRI="#LivingArea"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Zone"/>
-        <NamedIndividual IRI="#NightZone"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Camera"/>
-        <NamedIndividual IRI="#GardenCam"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Camera"/>
-        <NamedIndividual IRI="#EntranceCam"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#MotionSensor"/>
-        <NamedIndividual IRI="#BedroomMotion"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#MotionSensor"/>
-        <NamedIndividual IRI="#SecurityMotion"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#TemperatureSensor"/>
-        <NamedIndividual IRI="#KitchenTempSensor"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Thermostat"/>
-        <NamedIndividual IRI="#Nest_Thermo"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Light"/>
-        <NamedIndividual IRI="#HueBulb_01"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Light"/>
-        <NamedIndividual IRI="#BedroomLight"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#SmartLock"/>
-        <NamedIndividual IRI="#FrontDoorLock"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#HomeHub"/>
-        <NamedIndividual IRI="#MainHub"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#MobileApp"/>
-        <NamedIndividual IRI="#OwnerPhone"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Scene"/>
-        <NamedIndividual IRI="#NightMode"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Network"/>
-        <NamedIndividual IRI="#HomeWifi"/>
-    </ClassAssertion>
-
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasRoom"/>
-        <NamedIndividual IRI="#LivingArea"/>
-        <NamedIndividual IRI="#LivingRoom"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasRoom"/>
-        <NamedIndividual IRI="#LivingArea"/>
-        <NamedIndividual IRI="#Kitchen"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasRoom"/>
-        <NamedIndividual IRI="#NightZone"/>
-        <NamedIndividual IRI="#Bedroom"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#locatedIn"/>
-        <NamedIndividual IRI="#HueBulb_01"/>
-        <NamedIndividual IRI="#LivingRoom"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#locatedIn"/>
-        <NamedIndividual IRI="#EntranceCam"/>
-        <NamedIndividual IRI="#LivingRoom"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#locatedIn"/>
-        <NamedIndividual IRI="#FrontDoorLock"/>
-        <NamedIndividual IRI="#LivingRoom"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#locatedIn"/>
-        <NamedIndividual IRI="#Nest_Thermo"/>
-        <NamedIndividual IRI="#Kitchen"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#locatedIn"/>
-        <NamedIndividual IRI="#KitchenTempSensor"/>
-        <NamedIndividual IRI="#Kitchen"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#locatedIn"/>
-        <NamedIndividual IRI="#BedroomLight"/>
-        <NamedIndividual IRI="#Bedroom"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#locatedIn"/>
-        <NamedIndividual IRI="#BedroomMotion"/>
-        <NamedIndividual IRI="#Bedroom"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#locatedIn"/>
-        <NamedIndividual IRI="#SecurityMotion"/>
-        <NamedIndividual IRI="#SecurityRoom"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#monitors"/>
-        <NamedIndividual IRI="#GardenCam"/>
-        <NamedIndividual IRI="#Garden"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#monitors"/>
-        <NamedIndividual IRI="#EntranceCam"/>
-        <NamedIndividual IRI="#LivingRoom"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#controls"/>
-        <NamedIndividual IRI="#MainHub"/>
-        <NamedIndividual IRI="#HueBulb_01"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#controls"/>
-        <NamedIndividual IRI="#MainHub"/>
-        <NamedIndividual IRI="#Nest_Thermo"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#controls"/>
-        <NamedIndividual IRI="#MainHub"/>
-        <NamedIndividual IRI="#BedroomLight"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#controls"/>
-        <NamedIndividual IRI="#MainHub"/>
-        <NamedIndividual IRI="#FrontDoorLock"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#controls"/>
-        <NamedIndividual IRI="#OwnerPhone"/>
-        <NamedIndividual IRI="#FrontDoorLock"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#controls"/>
-        <NamedIndividual IRI="#OwnerPhone"/>
-        <NamedIndividual IRI="#GardenCam"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#activates"/>
-        <NamedIndividual IRI="#MainHub"/>
-        <NamedIndividual IRI="#NightMode"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#activates"/>
-        <NamedIndividual IRI="#OwnerPhone"/>
-        <NamedIndividual IRI="#NightMode"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#connectedTo"/>
-        <NamedIndividual IRI="#HueBulb_01"/>
-        <NamedIndividual IRI="#HomeWifi"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#connectedTo"/>
-        <NamedIndividual IRI="#BedroomLight"/>
-        <NamedIndividual IRI="#HomeWifi"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#connectedTo"/>
-        <NamedIndividual IRI="#Nest_Thermo"/>
-        <NamedIndividual IRI="#HomeWifi"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#connectedTo"/>
-        <NamedIndividual IRI="#KitchenTempSensor"/>
-        <NamedIndividual IRI="#HomeWifi"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#connectedTo"/>
-        <NamedIndividual IRI="#GardenCam"/>
-        <NamedIndividual IRI="#HomeWifi"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#connectedTo"/>
-        <NamedIndividual IRI="#EntranceCam"/>
-        <NamedIndividual IRI="#HomeWifi"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#connectedTo"/>
-        <NamedIndividual IRI="#FrontDoorLock"/>
-        <NamedIndividual IRI="#HomeWifi"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#connectedTo"/>
-        <NamedIndividual IRI="#BedroomMotion"/>
-        <NamedIndividual IRI="#HomeWifi"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#connectedTo"/>
-        <NamedIndividual IRI="#SecurityMotion"/>
-        <NamedIndividual IRI="#HomeWifi"/>
-    </ObjectPropertyAssertion>
-
-    <DataPropertyAssertion>
-        <DataProperty IRI="#deviceName"/>
-        <NamedIndividual IRI="#HueBulb_01"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">LivingRoom_Bulb</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#deviceName"/>
-        <NamedIndividual IRI="#BedroomLight"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Bedroom_Light</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#deviceName"/>
-        <NamedIndividual IRI="#Nest_Thermo"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Kitchen_Thermo</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#deviceName"/>
-        <NamedIndividual IRI="#KitchenTempSensor"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Kitchen_TempSensor</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#deviceName"/>
-        <NamedIndividual IRI="#GardenCam"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">GardenCam</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#deviceName"/>
-        <NamedIndividual IRI="#EntranceCam"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">EntranceCam</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#deviceName"/>
-        <NamedIndividual IRI="#FrontDoorLock"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">FrontDoor_Lock</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#deviceName"/>
-        <NamedIndividual IRI="#BedroomMotion"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Bedroom_Motion</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#deviceName"/>
-        <NamedIndividual IRI="#SecurityMotion"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Security_Motion</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#temperatureValue"/>
-        <NamedIndividual IRI="#KitchenTempSensor"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">21.5</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#brightnessLevel"/>
-        <NamedIndividual IRI="#HueBulb_01"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">80</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#brightnessLevel"/>
-        <NamedIndividual IRI="#BedroomLight"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">0</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#isActive"/>
-        <NamedIndividual IRI="#HueBulb_01"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#isActive"/>
-        <NamedIndividual IRI="#BedroomLight"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#isActive"/>
-        <NamedIndividual IRI="#Nest_Thermo"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#isActive"/>
-        <NamedIndividual IRI="#KitchenTempSensor"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#isActive"/>
-        <NamedIndividual IRI="#GardenCam"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#isActive"/>
-        <NamedIndividual IRI="#EntranceCam"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#isActive"/>
-        <NamedIndividual IRI="#FrontDoorLock"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#isActive"/>
-        <NamedIndividual IRI="#BedroomMotion"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#isActive"/>
-        <NamedIndividual IRI="#SecurityMotion"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
-    </DataPropertyAssertion>
-
-    <DifferentIndividuals>
-        <NamedIndividual IRI="#LivingRoom"/>
-        <NamedIndividual IRI="#Kitchen"/>
-        <NamedIndividual IRI="#Bedroom"/>
-        <NamedIndividual IRI="#SecurityRoom"/>
-        <NamedIndividual IRI="#Garden"/>
-    </DifferentIndividuals>
-    <DifferentIndividuals>
-        <NamedIndividual IRI="#LivingArea"/>
-        <NamedIndividual IRI="#NightZone"/>
-    </DifferentIndividuals>
-    <DifferentIndividuals>
-        <NamedIndividual IRI="#HueBulb_01"/>
-        <NamedIndividual IRI="#BedroomLight"/>
-        <NamedIndividual IRI="#Nest_Thermo"/>
-        <NamedIndividual IRI="#KitchenTempSensor"/>
-        <NamedIndividual IRI="#FrontDoorLock"/>
-        <NamedIndividual IRI="#GardenCam"/>
-        <NamedIndividual IRI="#EntranceCam"/>
-        <NamedIndividual IRI="#BedroomMotion"/>
-        <NamedIndividual IRI="#SecurityMotion"/>
-    </DifferentIndividuals>
-    <DifferentIndividuals>
-        <NamedIndividual IRI="#MainHub"/>
-        <NamedIndividual IRI="#OwnerPhone"/>
-    </DifferentIndividuals>
-
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isLocatedInZone</IRI>
+        <Literal>isLocatedInZone</Literal>
+    </AnnotationAssertion>
 </Ontology>
